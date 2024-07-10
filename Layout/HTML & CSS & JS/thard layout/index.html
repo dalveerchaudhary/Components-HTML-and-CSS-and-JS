@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Art Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header .decorative {
+            color: #ffd700;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .promo-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .promo-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 1rem;
+            padding: 1rem;
+            text-align: center;
+            width: calc(33.333% - 2rem);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .promo-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .promo-item h2 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .promo-item button {
+            background-color: #ff4500;
+            border: none;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Modern <span class="decorative">Art</span></h1>
+        <nav>
+            <ul>
+                <li><a href="#">Azulejo</a></li>
+                <li><a href="#">Pottery</a></li>
+                <li><a href="#">Cameo</a></li>
+                <li><a href="#">Pewter</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="promo-section">
+            <div class="promo-item">
+                <img src="path/to/pendant-light.jpg" alt="Decorative Pendant Light">
+                <h2>Decorative Pendant Light</h2>
+            </div>
+            <div class="promo-item">
+                <h2>Big Saving</h2>
+                <p>Get 75% Off on Ceils</p>
+                <button>Shop Now</button>
+            </div>
+            <div class="promo-item">
+                <h2>Flat 40% Off</h2>
+                <p>Big Saving Season</p>
+            </div>
+            <div class="promo-item">
+                <h2>Big Craft</h2>
+                <p>Decorative Flower</p>
+            </div>
+            <div class="promo-item">
+                <h2>Big Saving</h2>
+                <p>Save 35% off Decorative</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Modern Art Store</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.promo-item button');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    alert('Button clicked!');
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
