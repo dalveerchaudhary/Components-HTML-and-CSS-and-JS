@@ -1,260 +1,171 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-@primary: #00A885;
-/* //----- common css -------- */
-body{
-  background: #f2f2f2;
-}
-.animate{
-  transition: all 0.3s linear;
-}
-.text-center{
-  text-align: center;
-}
-.pull-left{
-  float: left;
-}
-.pull-right{
-  float: right;
-}
-.clearfix:after {
-     visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
-     }
-.clearfix { display: inline-block; }
-/* start commented backslash hack \*/
-* html .clearfix { height: 1%; }
-.clearfix { display: block; }
-/* close commented backslash hack */
-a{
-  color: @primary;
-  &:hover,
-  &:focus{
-    color: darken(@primary, 10%);
-    /* .animate; */
-  }
-}
-.text-primary{
-  color: @primary;
-}
-// chrome auto fill yello yaaak color
-input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px white inset !important;
-}
-
-/* //------ common css end ------ */
-
-.logo{
-  h1{
-    color: @primary;
-    margin-bottom: -12px;
-  }
-}
-
-input[type="checkbox"]{
-  width: auto;
-}
-  button {
-    cursor: pointer;
-    background: @primary;
-    width: 100%;
-    border: 0;
-    padding: 10px 15px;
-    color: #fff;
-    font-size: 20px;
-    -webkit-transition: .3s linear;
-    transition: .3s linear;
-}
-
-
-span.validate-tooltip {
-    background: #D91717;
-    width: 100%;
-    display: block;
-    padding: 5px;
-    color: #fff;
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-size: 14px;
-    margin-top: -28px;
-    transition: all 0.3s ease-in-out;
-    -webkit-animation: tooltipanimation .3s 1;
-    -moz-animation: tooltipanimation .3s 1;
-    -o-animation: tooltipanimation .3s 1;
-    animation: tooltipanimation .3s 1;
+    font-family: 'Poppins', sans-serif;
 }
-// focus animation css
-.input-group{
-  position: relative;
-  margin-bottom: 20px;
-  label{
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4070f4;
+    column-gap: 30px;
+}
+.form{
     position: absolute;
-    top: 9px;
-    left: 10px;
+    max-width: 430px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 6px;
+    background: #FFF;
+}
+.form.signup{
+    opacity: 0;
+    pointer-events: none;
+}
+.forms.show-signup .form.signup{
+    opacity: 1;
+    pointer-events: auto;
+}
+.forms.show-signup .form.login{
+    opacity: 0;
+    pointer-events: none;
+}
+header{
+    font-size: 28px;
+    font-weight: 600;
+    color: #232836;
+    text-align: center;
+}
+form{
+    margin-top: 30px;
+}
+.form .field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+.field input,
+.field button{
+    height: 100%;
+    width: 100%;
+    border: none;
     font-size: 16px;
-    color: #cdcdcd;
-    font-weight: normal;
-    padding: 2px 5px;
-    z-index: 5;
-    .animate;
-  }
-  input{
-      outline: none;
-      display: block;
-      width: 100%;
-      height: 40px;
-      position: relative;
-      z-index: 3;
-      border: 1px solid #d9d9d9;
-      padding: 10px 10px;
-      background: #ffffff;
-      box-sizing: border-box;
-      font-wieght: 400;
-      -moz-transition: 0.3s ease;
-      -webkit-transition: 0.3s ease;
-      -o-transition: 0.3s ease;
-      transition: 0.3s ease;
-  }
-  
-  .lighting{
-    background: @primary;
-    width: 0;
-    height: 2px;
-    display: inline-block;
+    font-weight: 400;
+    border-radius: 6px;
+}
+.field input{
+    outline: none;
+    padding: 0 15px;
+    border: 1px solid#CACACA;
+}
+.field input:focus{
+    border-bottom-width: 2px;
+}
+.eye-icon{
     position: absolute;
-    top: 40px;
-    left: 0;
-    .animate;
-  }
-  // -- when input is focused or have value
-  &.focused{
-    .lighting{
-      width: 100%;
-     
-    }
-    label{
-      background: #fff;
-      font-size: 12px;
-      top: -8px;
-      left: 5px;
-      color: @primary;
-    }
-  }
-  /* // ---  end  ----  */
-  
-  span.validate-tooltip {
-    margin-top: 0;
-  }
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #8b8b8b;
+    cursor: pointer;
+    padding: 5px;
 }
-
-/* // layout module */
-.wrapper{
-  width: 320px;
-  background: #fff;
-  margin: 20px auto;
-  min-height: 200px;
-  border: 1px solid #f3f3f3;
-  .inner-warpper{
-    padding: 50px 30px 60px;
-    box-shadow: 1px 1.732px 10px 0px rgba(0, 0, 0, 0.063);
-  }
-  .title{
-    margin-top: 0;
-  }
-  .supporter{
+.field button{
+    color: #fff;
+    background-color: #0171d3;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.field button:hover{
+    background-color: #016dcb;
+}
+.form-link{
+    text-align: center;
     margin-top: 10px;
+}
+.form-link span,
+.form-link a{
     font-size: 14px;
-    color: #8E8E8E;
-    cursor: pointer;
-  }
-  .remember-me{
-      cursor: pointer;
-  }
-  input[type="checkbox"]{
-    float: left;
-    margin-right: 5px;
-    margin-top: 2px;
-    cursor: pointer;
-  }
-  label[for="rememberMe"]{
-    cursor: pointer;
-  }
-  .signup-wrapper{
-    padding: 10px;
-    font-size: 14px;
-    background: #EBEAEA;
-    a{
-      text-decoration: none;
-      color: #7F7F7F;
-      &:hover{
-        text-decoration: underline;
-      }
+    font-weight: 400;
+    color: #232836;
+}
+.form a{
+    color: #0171d3;
+    text-decoration: none;
+}
+.form-content a:hover{
+    text-decoration: underline;
+}
+.line{
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 36px 0;
+    background-color: #d4d4d4;
+}
+.line::before{
+    content: 'Or';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    color: #8b8b8b;
+    padding: 0 15px;
+}
+.media-options a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a.facebook{
+    color: #fff;
+    background-color: #4267b2;
+}
+a.facebook .facebook-icon{
+    height: 28px;
+    width: 28px;
+    color: #0171d3;
+    font-size: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+.facebook-icon,
+img.google-img{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+img.google-img{
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+}
+a.google{
+    border: 1px solid #CACACA;
+}
+a.google span{
+    font-weight: 500;
+    opacity: 0.6;
+    color: #232836;
+}
+
+@media screen and (max-width: 400px) {
+    .form{
+        padding: 20px 10px;
     }
-  }
+    
 }
-
-
-/* // animatie tooltip */
-@-webkit-keyframes tooltipanimation {
-	from {
-		margin-top: -28px;
-	}
-
-	to {
-		margin-top: 0;
-	}
-}
-@-moz-keyframes tooltipanimation {
-	from {
-		margin-top: -28px;
-	}
-
-	to {
-		margin-top: 0;
-	}
-}
-@-o-keyframes tooltipanimation {
-	from {
-		margin-top: -28px;
-	}
-
-	to {
-		margin-top: 0;
-	}
-}
-@keyframes tooltipanimation {
-	from {
-		margin-top: -28px;
-	}
-
-	to {
-		margin-top: 0;
-	}
-}
-
-
-
-
-
-/* // dummy no need to take */
-.direction{
-  width: 200px;
-  position: fixed;
-  top: 120px; left: 20px;
-  font-size: 14px;
-  line-height: 1.2;
-  text-align: center; 
-  background: #9365B8;
-  padding: 10px; 
-  color: #fff;
-  
-  @media (max-width: 480px) {
-       position: static;
-  }
-}
-
-
-
-

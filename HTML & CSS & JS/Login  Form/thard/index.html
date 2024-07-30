@@ -1,101 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="style.css">
+        <title> Responsive Login and Signup Form </title>                      
+    </head>
+    <body>
+        <section class="container forms">
+            <div class="form login">
+                <div class="form-content">
+                    <header>Login</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="email" placeholder="Email" class="input">
+                        </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
+                        <div class="field input-field">
+                            <input type="password" placeholder="Password" class="password">
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
 
-<body>
+                        <div class="form-link">
+                            <a href="#" class="forgot-pass">Forgot password?</a>
+                        </div>
 
-    <div class="logo text-center">
-        <h1>Logo</h1>
-    </div>
-    <div class="wrapper">
-        <div class="inner-warpper text-center">
-            <h2 class="title">Login to your account</h2>
-            <form action="" id="formvalidate">
-                <div class="input-group">
-                    <label class="palceholder" for="userName">User Name</label>
-                    <input class="form-control" name="userName" id="userName" type="text" placeholder="" />
-                    <span class="lighting"></span>
-                </div>
-                <div class="input-group">
-                    <label class="palceholder" for="userPassword">Password</label>
-                    <input class="form-control" name="userPassword" id="userPassword" type="password" placeholder="" />
-                    <span class="lighting"></span>
-                </div>
+                        <div class="field button-field">
+                            <button>Login</button>
+                        </div>
+                    </form>
 
-                <button type="submit" id="login">Login</button>
-                <div class="clearfix supporter">
-                    <div class="pull-left remember-me">
-                        <input id="rememberMe" type="checkbox">
-                        <label for="rememberMe">Remember Me</label>
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
                     </div>
-                    <a class="forgot pull-right" href="#">Forgot Password?</a>
                 </div>
-            </form>
-        </div>
-        <div class="signup-wrapper text-center">
-            <a href="#">Don't have an accout? <span class="text-primary">Create One</span></a>
-        </div>
-    </div>
 
-    <!-- you don't need that :)  -->
-    <div class="direction">
-        Type something in input and click submit to see the effect
-    </div>
+                <div class="line"></div>
 
-    <script>
-        + function($) {
-  $('.palceholder').click(function() {
-    $(this).siblings('input').focus();
-  });
+                <div class="media-options">
+                    <a href="#" class="field facebook">
+                        <i class='bx bxl-facebook facebook-icon'></i>
+                        <span>Login with Facebook</span>
+                    </a>
+                </div>
 
-  $('.form-control').focus(function() {
-    $(this).parent().addClass("focused");
-  });
+                <div class="media-options">
+                    <a href="#" class="field google">
+                        <img src="#" alt="" class="google-img">
+                        <span>Login with Google</span>
+                    </a>
+                </div>
 
-  $('.form-control').blur(function() {
-    var $this = $(this);
-    if ($this.val().length == 0)
-      $(this).parent().removeClass("focused");
-  });
-  $('.form-control').blur();
+            </div>
 
-  // validetion
-  $.validator.setDefaults({
-    errorElement: 'span',
-    errorClass: 'validate-tooltip'
-  });
+            <!-- Signup Form -->
 
-  $("#formvalidate").validate({
-    rules: {
-      userName: {
-        required: true,
-        minlength: 6
-      },
-      userPassword: {
-        required: true,
-        minlength: 6
-      }
-    },
-    messages: {
-      userName: {
-        required: "Please enter your username.",
-        minlength: "Please provide valid username."
-      },
-      userPassword: {
-        required: "Enter your password to Login.",
-        minlength: "Incorrect login or password."
-      }
-    }
-  });
+            <div class="form signup">
+                <div class="form-content">
+                    <header>Signup</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="email" placeholder="Email" class="input">
+                        </div>
 
-}(jQuery);
-    </script>
-</body>
+                        <div class="field input-field">
+                            <input type="password" placeholder="Create password" class="password">
+                        </div>
 
+                        <div class="field input-field">
+                            <input type="password" placeholder="Confirm password" class="password">
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
+
+                        <div class="field button-field">
+                            <button>Signup</button>
+                        </div>
+                    </form>
+
+                    <div class="form-link">
+                        <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="media-options">
+                    <a href="#" class="field facebook">
+                        <i class='bx bxl-facebook facebook-icon'></i>
+                        <span>Login with Facebook</span>
+                    </a>
+                </div>
+
+                <div class="media-options">
+                    <a href="#" class="field google">
+                        <img src="#" alt="" class="google-img">
+                        <span>Login with Google</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="app.js"></script>
+    </body>
 </html>
