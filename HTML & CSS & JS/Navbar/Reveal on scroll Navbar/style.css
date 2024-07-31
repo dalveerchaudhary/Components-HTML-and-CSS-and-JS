@@ -1,0 +1,132 @@
+body{
+    overflow: visible;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: none;
+  }
+  
+  h2{
+    font-size: 82px !important;
+    font-weight:  300;
+    font-family: Helvetica;
+    text-align: center;
+    color: black;
+    padding-top: 0px;
+    letter-spacing: -1px;
+  }
+  
+    h3 {
+    font-size: 42px !important;
+    font-weight:  300;
+    font-family: Helvetica;
+    text-align: center;
+    color: black;
+    padding-top: 0px;
+    letter-spacing: -1px;
+  }
+  
+  p {
+   text-align:  center;
+   font-size: 20px;
+    line-height: 26px;
+   font-family: Helvetica;
+    font-weight: 300;
+  }
+  .demo{
+    padding-top: 2%;
+    padding-left:  20%;
+    padding-right: 20%;
+  }
+  
+  /* this is test content so you can scroll */
+  .test-content {
+    height: 2000px;
+    width:100%;
+    background: lavender;
+  }
+  
+  
+  
+  /* NAVIGATION REVEAL CODE STYLE STARTS HERE */
+  
+  /* Nav Text link default style*/
+  .nav-text-link a{
+    color: black;
+    text-decoration: none;
+    font-family: Helvetica;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    padding-right: 30px;
+    transition: all 0.25s;
+  }
+  
+  /* Nav Text link hover effects */
+  .nav-text-link a:hover{
+    color: grey;
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  
+  /* Nav logo default style */
+  .nav-logo a {
+    color: black;
+    font-family: 'Helvetica';
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    padding-left:  30px;
+    transition: all 0.25s;
+  }
+  
+  /* Nav logo hover effects */
+  .nav-logo a:hover{
+    color: red;
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  
+  /* column containers set to 12 columns divided by 6, so this currently equals 50% width. */
+  .navcolumn1 {
+    width: calc(100% / 12 * 6);
+    margin-left: 0px;
+    display: flex;
+    flex-grow: 0;
+    justify-content: flex-start;
+  }
+  .navcolumn2 {
+    width: calc(100% / 12 * 6);
+    justify-content: flex-end;
+    display: flex;
+    flex-grow: 0;
+  }
+  
+  
+  
+  
+  /* main container which is transitioned into the viewport by the script */
+  .nav {
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 0px;
+  margin-bottom: 0.6rem;
+  width: 100%;
+  overflow: auto;
+  align-content: center;
+  height: 60px;
+  background: white;
+  position: fixed;
+  z-index: 1;
+  transition: all 1s;
+  margin-left: 0px !important;
+    padding-left: 0px;
+    padding-right: 0px;
+      }
+  
+  /* This class is called by the JS, you can edit the margin values for how far down the page you want to position your nav etc */
+  .hide { margin-top: -60px; } .show { margin-top: 0px;
+  }
+  
+  
+  /* CUSTOM NAV REVEAL STYLING END ------------ */
