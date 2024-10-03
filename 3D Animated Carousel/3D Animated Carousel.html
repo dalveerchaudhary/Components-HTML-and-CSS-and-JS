@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Animated Carousel</title>
+  <style>
+    :root {
+      --primary-color: #c8dc71;
+      --gradient-color: linear-gradient(180deg, #d2ff00 0%, #00d2ff 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Space Grotesk", sans-serif;
+      background-color: #16181b;
+    }
+
+    .container {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      gap: 3rem;
+    }
+
+    /* Custom */
+
+    .carousel {
+      max-width: 80%;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
+    }
+
+    .carousel .item {
+      width: 20%;
+      height: 250px;
+      max-width: 250px;
+      background-color: white;
+      margin: 2px;
+      transition: 0.5s;
+      object-fit: cover;
+      filter: brightness(1);
+    }
+
+    .carousel .item:hover {
+      filter: brightness(1);
+      transform: translateZ(170px);
+    }
+
+    .carousel .item:hover+* {
+      filter: brightness(0.6);
+      transform: translateZ(120px) rotateY(25deg);
+    }
+
+    .carousel .item:hover+*+* {
+      filter: brightness(0.4);
+      transform: translateZ(50px) rotateY(15deg);
+    }
+
+    .carousel .item:has(+ *:hover) {
+      filter: brightness(0.6);
+      transform: translateZ(120px) rotateY(-25deg);
+    }
+
+    .carousel .item:has(+ * + *:hover) {
+      filter: brightness(0.4);
+      transform: translateZ(50px) rotateY(-15deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="carousel">
+      <img class="item"
+        src="https://images.pexels.com/photos/21927155/pexels-photo-21927155/free-photo-of-madera-amanecer-paisaje-agua.jpeg"
+        alt="">
+      <img class="item"
+        src="https://images.pexels.com/photos/22027165/pexels-photo-22027165/free-photo-of-nieve-nevar-paisaje-puesta-de-sol.jpeg"
+        alt="">
+      <img class="item"
+        src="https://images.pexels.com/photos/22377281/pexels-photo-22377281/free-photo-of-madera-paisaje-agua-verano.jpeg"
+        alt="">
+      <img class="item"
+        src="https://images.pexels.com/photos/22447657/pexels-photo-22447657/free-photo-of-madera-paisaje-agua-verano.jpeg"
+        alt="">
+      <img class="item" src="https://images.pexels.com/photos/13673325/pexels-photo-13673325.jpeg" alt="">
+    </div>
+  </div>
+</body>
+
+</html>
