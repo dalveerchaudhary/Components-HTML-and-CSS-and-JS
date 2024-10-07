@@ -1,0 +1,101 @@
+.pulse{
+    border-radius: 10px;
+    position: absolute;
+    /*Change to move pulse*/
+    top: 0px;
+    right:52px;
+    /*End Change*/
+    width: 8px;
+    height: 8px;
+    animation: pulse 0.85s ease-in-out infinite;
+}
+/* Style 1 - Outer pulsing with icon */
+.pulse:before{
+    content: '';
+    display: block;
+    background-color: #ea6565;
+    border-radius: 20px;
+    position: absolute;
+    /*Change to align pulse*/
+    top: 0px;
+    right: 0px;
+    /*End Change*/
+    height: 12px;
+    width: 12px;
+    transform: scale(1);
+    animation: pulse-fade 2s infinite;
+}
+
+/* Style 2 - Pulse with text element */
+.pulse-text:before{
+    content: '';
+    display: block;
+    background-color: #ea6565;
+    border-radius: 20px;
+    position: absolute;
+    /*Change to align pulse*/
+    top: 15px;
+    right: 12px;
+    /*End Change*/
+    height: 10px;
+    width: 10px;
+    transform: scale(1);
+    animation: pulse-fade 2s infinite;
+}
+
+/* Inner Pulsing */
+@keyframes pulse {
+  0% {
+      transform: scale(0.9);
+  }
+
+  50% {
+      transform: scale(1.0);
+  }
+
+  100% {
+      transform: scale(0.9);
+  }
+}
+
+/* Outer Pulsing */
+@keyframes pulse-fade {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgb(234, 101, 101, 0.7);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgb(234, 101, 101, 0);
+  }
+  
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgb(234, 101, 101, 0);
+  }
+}
+
+/* Body, containers, and icon styles */
+body {
+  font-family: 'Varela Round', sans-serif !important;
+}
+.container {
+  max-width:150px;
+  max-height:50px;
+  display:flex;
+  justify-content:center;
+  position:relative;
+  text-align:center;
+}
+
+.container i{
+  font-size:2.3rem;
+  color:#00000070;
+}
+
+.parent-container {
+  width: 200px;
+  height: 100%;
+  margin: 10% auto 0;
+}
