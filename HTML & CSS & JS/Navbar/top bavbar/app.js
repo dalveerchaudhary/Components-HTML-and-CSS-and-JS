@@ -1,12 +1,7 @@
-nav = document.getElementById("nav");
+$('.navTrigger').click(function () {
+  $(this).toggleClass('active');
+  console.log("Clicked menu");
+  $("#mainListDiv").toggleClass("show_list");
+  $("#mainListDiv").fadeIn();
 
-  var myScrollFunc = function () {
-    var y = window.scrollY;
-    if (y >= 200) {
-        nav.className = "nav show"
-    } else {
-        nav.className = "nav hide"
-    }
-  };
-
-  window.addEventListener("scroll", myScrollFunc);
+});
